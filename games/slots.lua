@@ -127,7 +127,7 @@ repeat
     io.read()
     stopColumn(3)
     printScreen()
-    
+
     checkWin()
     io.write("\n", "Play again? (y/n)", "\n")
     io.flush()

@@ -40,7 +40,7 @@ end
 function Game.printInfo (self)
     io.write("\n", "BALANCE: " .. self.balance .. " (" .. (self.balance - self.buyin) .. ")", "\n")
     io.write("ODDS: " .. engine.odds, "\n")
-    io.write("CHANCE: " .. engine.chance .. "%", "\n")
+    io.write("CHANCE: " .. engine.chance * 100 .. "%", "\n")
 end
 function Game.roll (self, bet, hilo)
     self.bet(self, bet + self.jackpot)
@@ -111,7 +111,7 @@ repeat
 
         bet = tonumber(input)
 
-        io.write("\n", "At " .. engine.chance .. "% odds you can win " .. ((bet * engine.odds) - bet), "\n")
+        io.write("\n", "At " .. engine.chance * 100 .. "% odds you can win " .. ((bet * engine.odds) - bet), "\n")
         io.write("To win, bet HI and roll a number higher than " .. engine.higher_threshold, "\n")
         io.write("or bet LO and roll a number lower than " .. engine.lower_threshold, "\n")
         io.write("(HI / LO)", "\n")
